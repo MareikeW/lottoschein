@@ -51,6 +51,15 @@ const ContextProvider = (props) => {
         })  
     }
     
+    /*const feldContainer = document.getElementsByClassName("ziffer__container");
+    
+    if (context.count === 6 && !context.felderArray[ziffer-1].selected) {  
+        feldContainer[ziffer-1].classList.add("disabledFeld");
+    } 
+    
+    else if (context.count > 0 && context.count < 6) {
+        feldContainer[ziffer-1].classList.remove("disabledFeld");
+    }*/
     
     /* Sämtliche Elemente im felderArray werden auf nicht ausgewählt zurückgesetzt und selectedFelder auf einen leeren Array zurückgesetzt. */
     const deleteMarks = () => {
@@ -59,11 +68,12 @@ const ContextProvider = (props) => {
                 return feld.selected === true ? {...feld, selected: false} : feld;
             })
         )
+        setCount(0);
         setSelectedFelder([]);
     }
    
     return (
-        <Context.Provider value={{ felderArray, setFelderArray, count, setCount, handleClick, deleteMarks }}>
+        <Context.Provider value={{ felderArray, setFelderArray, count, setCount, handleClick, deleteMarks, selectedFelder, setSelectedFelder }}>
             {props.children}
         </Context.Provider>
     )

@@ -6,14 +6,20 @@ const Feld = ({ ziffer }) => {
     const context = useContext(Context);
     const feldContainer = document.getElementsByClassName("ziffer__container");
     
-    if (context.count === 6 && !context.felderArray[ziffer-1].selected) {  
-        feldContainer[ziffer-1].classList.add("disabledFeld");
-    } 
+    if (feldContainer.length > 0) {
+        if ((context.selectedFelder.length === 6 && !context.felderArray[ziffer-1].selected) && !feldContainer[ziffer-1].classList.contains("disabledFeld")) {  
+            feldContainer[ziffer-1].classList.add("disabledFeld");
+        } 
+        
+        else if ((context.selectedFelder.length > 0 && context.selectedFelder.length < 6) && feldContainer[ziffer-1].classList.contains("disabledFeld")) {
+            feldContainer[ziffer-1].classList.remove("disabledFeld");
+        }
     
-    else if (context.count > 0 && context.count < 6) {
-        feldContainer[ziffer-1].classList.remove("disabledFeld");
+        else if (context.selectedFelder.length === 0 && feldContainer[ziffer-1].classList.contains("disabledFeld")) {
+            feldContainer[ziffer-1].classList.remove("disabledFeld");
+        }
     }
-    
+
     const handleFeldClick = ziffer => {
         if (context.count >= 0 && context.count < 6) {
             context.handleClick(ziffer);

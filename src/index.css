@@ -30,7 +30,7 @@ h1 {
 }
 
 .disabledFeld {
-  cursor: unset;
+  cursor: not-allowed;
   background: red;
 }
 
