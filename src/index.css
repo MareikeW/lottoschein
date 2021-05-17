@@ -1,0 +1,81 @@
+*  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  background-color: rgb(240, 240, 245);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1em;
+}
+
+.spielfeld {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1em .2em;
+}
+
+.ziffer__container {
+  position: relative;
+  cursor: pointer;
+}
+
+.disabledFeld {
+  cursor: unset;
+  background: red;
+}
+
+.ziffer {
+  margin: .2em;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+}
+
+.kreuzchen {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  filter: invert(0.3) brightness(0.8);
+  cursor: pointer;
+}
+
+.loeschen {
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 1em .2em;
+  align-items: center;
+  cursor: pointer;
+  width: max-content;
+}
+
+.loeschen:hover,
+.loeschen:focus {
+  filter: brightness(0.9);
+  color: lightgray;
+}
+
+.loeschen > img {
+  width: 24px;
+  height: auto;
+}
+
+.loeschen > h3 {
+  margin-left: 0.3em;
+}
