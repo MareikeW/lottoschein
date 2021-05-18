@@ -6,7 +6,7 @@ const Feld = ({ ziffer }) => {
     const context = useContext(Context);
     const feldContainer = document.getElementsByClassName("ziffer__container");
     
-    if (feldContainer.length > 0) {
+    if (feldContainer.length === 49) {
         if ((context.selectedFelder.length === 6 && !context.felderArray[ziffer-1].selected) && !feldContainer[ziffer-1].classList.contains("disabledFeld")) {  
             feldContainer[ziffer-1].classList.add("disabledFeld");
         } 

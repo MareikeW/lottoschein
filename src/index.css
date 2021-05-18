@@ -79,3 +79,23 @@ h1 {
 .loeschen > h3 {
   margin-left: 0.3em;
 }
+
+.weiterButton {
+  background: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.weiterButton:hover,
+.weiterButton:focus {
+  background: lightblue;
+  color: #FFFFFF;
+}
+
+.disabledButton {
+  cursor: not-allowed;
+  background-color: lightgrey;
+}
