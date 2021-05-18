@@ -6,15 +6,17 @@ const WeiterButton = () => {
     const [finalSelectedFelder, setFinalSelectedFelder] = useState([]);
 
     const handleSubmit = () => {
-            context.selectedFelder.forEach(selectedFeld => {
-                setFinalSelectedFelder(prevState => [...prevState, selectedFeld.id]);
-            });     
+        context.selectedFelder.forEach(selectedFeld => {
+            setFinalSelectedFelder(prevState => [...prevState, selectedFeld.id]);
+        });
     }
       
     return (
         <div>
-            <button className="weiterButton" onClick={handleSubmit}>Weiter</button>
-            <div>{ finalSelectedFelder }</div>
+            {finalSelectedFelder.length < 6 
+                ? <button className="weiterButton" onClick={handleSubmit}>Weiter</button> 
+                : <div className="outputAnzeige">Ihre Zahlen: { finalSelectedFelder.join(" ") }</div>
+            }
         </div>
     )
 }
