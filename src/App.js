@@ -16,8 +16,14 @@ const App = () => {
             <div className="spielfeld">
                 { felder }
             </div>
-            <LoeschenContainer />
-            { context.selectedFelder.length === 6 ? <WeiterButton /> : null }
+            <div className="navigation">
+                <LoeschenContainer />
+                { 
+                    context.selectedFelder.length === 6 
+                    ? <WeiterButton /> 
+                    : <h3>{context.count}/6</h3> 
+                }
+            </div>
         </main>
     )
 }

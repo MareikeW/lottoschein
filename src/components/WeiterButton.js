@@ -15,7 +15,7 @@ const WeiterButton = () => {
         <div>
             {finalSelectedFelder.length < 6 
                 ? <button className="weiterButton" onClick={handleSubmit}>Weiter</button> 
-                : <div className="outputAnzeige">Ihre Zahlen: { finalSelectedFelder.join(" ") }</div>
+                : <div className="outputAnzeige">Ihre Zahlen: <br/> { finalSelectedFelder.join(" ") }</div>
             }
         </div>
     )
