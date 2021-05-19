@@ -117,6 +117,29 @@ h1 {
   position: relative;
 }
 
+#progressbar {
+  width: 100px;
+  height: 2.8em;
+  border: 2px solid #FFFFFF;
+  border-radius: 0.5em;
+  margin: 0 auto;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+#progressbar div {
+  height: 100%;
+  border: 2px solid #FFFFFF;
+  background-color: lightskyblue;
+  border-radius: 0.5em;
+}
+
+.progress-label {
+  position: absolute;
+  top: 12px;
+  left: 38%;
+}
+
 .outputAnzeige {
   position: absolute;
   top: 5em;

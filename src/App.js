@@ -3,6 +3,7 @@ import { Context } from "./context"
 import Feld from "./components/Feld";
 import LoeschenContainer from "./components/LoeschenContainer";
 import WeiterButton from "./components/WeiterButton";
+import FortschrittAnzeige from "./components/FortschrittAnzeige";
 
 const App = () => {
     const context = useContext(Context);
@@ -21,7 +22,7 @@ const App = () => {
                 { 
                     context.selectedFelder.length === 6 
                     ? <WeiterButton /> 
-                    : <h3>{context.count}/6</h3> 
+                    : <FortschrittAnzeige /> 
                 }
             </div>
         </main>
