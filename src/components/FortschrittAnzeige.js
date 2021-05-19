@@ -7,7 +7,7 @@ const FortschrittAnzeige = () => {
         <div>
             <div id="progressbar">
                 <div style={{width: `calc((100% / 6) * ${context.count}) `}}>
-                    <p className="progressLabel"><strong>{context.count}/6</strong></p>
+                    <label className="progressLabel"><strong>{context.count}/6</strong></label>
                 </div>
             </div>
         </div>

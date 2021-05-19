@@ -20,12 +20,12 @@ const WeiterButton = () => {
                 ? <button className="weiterButton" onClick={handleSubmit}>Weiter</button> 
                 : <div className="outputAnzeige">Ihre Zahlen: 
                     <ul id="finalZahlenContainer">
-                        <li className="ziffer">{zahl1}</li>
-                        <li className="ziffer">{zahl2}</li>
-                        <li className="ziffer">{zahl3}</li>
-                        <li className="ziffer">{zahl4}</li>
-                        <li className="ziffer">{zahl5}</li>
-                        <li className="ziffer">{zahl6}</li>
+                        <li className="ziffer output">{zahl1}</li>
+                        <li className="ziffer output">{zahl2}</li>
+                        <li className="ziffer output">{zahl3}</li>
+                        <li className="ziffer output">{zahl4}</li>
+                        <li className="ziffer output">{zahl5}</li>
+                        <li className="ziffer output">{zahl6}</li>
                     </ul>
                 </div>
             }

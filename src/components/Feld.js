@@ -33,7 +33,7 @@ const Feld = ({ ziffer }) => {
     return (
         /* Gibt Ziffer vom geklickten Feld an Context zurück  */
         <div className="ziffer__container" onClick={() => handleFeldClick(ziffer)}>
-            <p className="ziffer">{ ziffer }</p>
+            <label className="ziffer">{ ziffer }</label>
             { context.felder[ziffer-1].selected 
                 && context.count <= 6 
                 ? <img className="kreuzchen" src={ kreuzchenImage } alt="Kreuzchen" /> 

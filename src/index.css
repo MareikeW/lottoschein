@@ -30,10 +30,9 @@ h1 {
 
 .ziffer__container {
   position: relative;
-  cursor: pointer;
 }
 
-.disabledFeld {
+.disabledFeld label {
   cursor: not-allowed;
   color: lightgray;
 }
@@ -47,6 +46,11 @@ h1 {
   width: 2rem;
   height: 2rem;
   background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.output {
+  cursor: default;
 }
 
 .kreuzchen {
@@ -98,8 +102,9 @@ h1 {
   height: auto;
 }
 
-.loeschenButton > p {
+.loeschenButton > label {
   margin-left: 0.3em;
+  cursor: pointer;
 }
 
 .weiterButton {
