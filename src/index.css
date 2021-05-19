@@ -114,10 +114,30 @@ h1 {
   justify-content: space-between;
   align-items: center;
   margin: 0 0.2em;
+  position: relative;
 }
 
 .outputAnzeige {
-  text-align: right;
+  position: absolute;
+  top: 5em;
+  left: 0;
+  width: 100%;
+}
+
+#finalZahlenContainer {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+#finalZahlenContainer li {
+  animation: rotation 2s;
+}
+
+@keyframes rotation {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(10deg);}
+  100% {transform: rotate(0deg);}
 }
 
 
