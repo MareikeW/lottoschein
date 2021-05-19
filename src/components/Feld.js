@@ -7,7 +7,7 @@ const Feld = ({ ziffer }) => {
     const feldContainer = document.getElementsByClassName("ziffer__container");
     
     if (feldContainer.length === 49) {
-        if ((context.selectedFelder.length === 6 && !context.felderArray[ziffer-1].selected) && !feldContainer[ziffer-1].classList.contains("disabledFeld")) {  
+        if ((context.selectedFelder.length === 6 && !context.felder[ziffer-1].selected) && !feldContainer[ziffer-1].classList.contains("disabledFeld")) {  
             feldContainer[ziffer-1].classList.add("disabledFeld");
         } 
         
@@ -25,7 +25,7 @@ const Feld = ({ ziffer }) => {
             context.handleClick(ziffer);
         } 
         
-        else if (context.count === 6 && context.felderArray[ziffer-1].selected) {
+        else if (context.count === 6 && context.felder[ziffer-1].selected) {
             context.handleClick(ziffer);
         }
     }
@@ -33,8 +33,12 @@ const Feld = ({ ziffer }) => {
     return (
         /* Gibt Ziffer vom geklickten Feld an Context zurück  */
         <div className="ziffer__container" onClick={() => handleFeldClick(ziffer)}>
-            <div className="ziffer">{ ziffer }</div>
-            { context.felderArray[ziffer-1].selected && context.count <= 6 ? <img className="kreuzchen" src={ kreuzchenImage } alt="Kreuzchen" /> : null }
+            <p className="ziffer">{ ziffer }</p>
+            { context.felder[ziffer-1].selected 
+                && context.count <= 6 
+                ? <img className="kreuzchen" src={ kreuzchenImage } alt="Kreuzchen" /> 
+                : null
+            }
        </div>
     )
 }

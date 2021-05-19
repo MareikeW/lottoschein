@@ -7,7 +7,7 @@ const WeiterButton = () => {
 
     const handleSubmit = () => {
         context.selectedFelder.forEach(selectedFeld => {
-            setFinalSelectedFelder(prevState => [...prevState, selectedFeld.id]);
+            setFinalSelectedFelder(prevFinalSelectedFelder => [...prevFinalSelectedFelder, selectedFeld.id]);
         });
     }
 
@@ -20,12 +20,12 @@ const WeiterButton = () => {
                 ? <button className="weiterButton" onClick={handleSubmit}>Weiter</button> 
                 : <div className="outputAnzeige">Ihre Zahlen: 
                     <ul id="finalZahlenContainer">
-                        <li class="ziffer">{zahl1}</li>
-                        <li class="ziffer">{zahl2}</li>
-                        <li class="ziffer">{zahl3}</li>
-                        <li class="ziffer">{zahl4}</li>
-                        <li class="ziffer">{zahl5}</li>
-                        <li class="ziffer">{zahl6}</li>
+                        <li className="ziffer">{zahl1}</li>
+                        <li className="ziffer">{zahl2}</li>
+                        <li className="ziffer">{zahl3}</li>
+                        <li className="ziffer">{zahl4}</li>
+                        <li className="ziffer">{zahl5}</li>
+                        <li className="ziffer">{zahl6}</li>
                     </ul>
                 </div>
             }

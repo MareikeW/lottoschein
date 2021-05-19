@@ -9,13 +9,13 @@ const App = () => {
     const context = useContext(Context);
    
     // Für jedes Element im felderArray wird eine Komponente erstellt.
-    const felder = context.felderArray.map(feld => <Feld key={feld.id} ziffer={feld.id} selected={feld.selected} />);
+    const alleFelder = context.felder.map(feld => <Feld key={feld.id} ziffer={feld.id} selected={feld.selected} />);
     
     return (
         <main>
             <h1>Ihr Spielfeld</h1>
             <div className="spielfeld">
-                { felder }
+                { alleFelder }
             </div>
             <div className="navigation">
                 <LoeschenContainer />

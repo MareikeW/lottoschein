@@ -12,18 +12,20 @@ body {
   justify-content: center;
 }
 
-.spielfeld {
-  min-width: 200px;
-  min-height: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 h1 {
   font-size: 1.5rem;
   font-weight: 400;
   margin: 1em .2em;
+}
+
+
+/* SPIELFELD */
+.spielfeld {
+  min-width: 12.5rem;
+  min-height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ziffer__container {
@@ -42,17 +44,17 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   background-color: #FFFFFF;
 }
 
 .kreuzchen {
-  width: 35px;
+  width: 2rem;
   height: auto;
   position: absolute;
   top: 0;
-  left: 5px;
+  left: 0.3em;
   filter: invert(35%) sepia(92%) saturate(818%) hue-rotate(179deg) brightness(91%) contrast(99%);
   cursor: pointer;
   animation-name: showKreuzchen;
@@ -64,7 +66,17 @@ h1 {
   to {opacity: 1;}
 }
 
-.loeschen {
+
+/* NAVIGATION */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1em;
+  position: relative;
+}
+
+.loeschenButton {
   display: flex;
   font-size: 0.8rem;
   font-weight: 400;
@@ -72,20 +84,21 @@ h1 {
   align-items: center;
   cursor: pointer;
   width: max-content;
+  background-color: none;
+  border: none;
 }
 
-.loeschen:hover,
-.loeschen:focus {
+.loeschenButton:hover {
   filter: brightness(0.9);
   color: lightgray;
 }
 
-.loeschen > img {
-  width: 24px;
+.loeschenButton > img {
+  width: 1.5rem;
   height: auto;
 }
 
-.loeschen > h3 {
+.loeschenButton > p {
   margin-left: 0.3em;
 }
 
@@ -109,17 +122,9 @@ h1 {
   background-color: lightgrey;
 } 
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 0.2em;
-  position: relative;
-}
-
 #progressbar {
-  width: 100px;
-  height: 2.8em;
+  width: 5rem;
+  height: 1.5em;
   border: 2px solid #FFFFFF;
   border-radius: 0.5em;
   margin: 0 auto;
@@ -134,9 +139,9 @@ h1 {
   border-radius: 0.5em;
 }
 
-.progress-label {
+.progressLabel {
   position: absolute;
-  top: 12px;
+  top: 2px;
   left: 38%;
 }
 
@@ -166,18 +171,25 @@ h1 {
 
 @media (min-width: 450px) {
   .spielfeld {
-    width: 400px;
-    height: 400px;
+    width: 25rem;
+    height: 25rem;
   }
   
   .ziffer {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
   }
   
   .kreuzchen {
-    width: 50px;
+    width: 3rem;
   }
 
+  #progressbar {
+    width: 6.25rem;
+    height: 2.8em;
+  }
   
+  .progressLabel {
+    top: 12px;
+  }
 }

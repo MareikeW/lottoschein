@@ -3,16 +3,16 @@ import React, { useState, useEffect } from "react";
 const Context = React.createContext();
 
 const ContextProvider = (props) => {
-    const [felderArray, setFelderArray] = useState([]);
+    const [felder, setFelder] = useState([]);
     const [count, setCount] = useState(0);
     const [selectedFelder, setSelectedFelder] = useState([]);
     
     // Erstellt 49 Felder, die nicht angekreuzt sind.
     useEffect(() => {
         for (let i = 1; i <= 49; i++) {
-            setFelderArray(prevState => {
+            setFelder(prevFelder => {
                 return [
-                    ...prevState,
+                    ...prevFelder,
                     {
                         id: i,
                         selected: false
@@ -26,7 +26,7 @@ const ContextProvider = (props) => {
     mit ausgewählten Felder wird ohne dieses Feld zurückgegeben. Feld noch nicht angekreuzt --> wir oben nur anders herum. */
     const handleClick = ziffer => {
         // eslint-disable-next-line array-callback-return
-        felderArray.map(feld => {
+        felder.map(feld => {
                 if (feld.id === ziffer) {
                     if (feld.selected) {
                         feld.selected = false;
@@ -35,9 +35,9 @@ const ContextProvider = (props) => {
                     } else {
                         feld.selected = true;
                         setCount(prevCount => prevCount + 1);
-                        setSelectedFelder(prevState => {
+                        setSelectedFelder(prevSelectedFelder => {
                             return [
-                                ...prevState,
+                                ...prevSelectedFelder,
                                 {
                                     id: feld.id,
                                     selected: feld.selected
@@ -52,9 +52,9 @@ const ContextProvider = (props) => {
     }
     
     /* Sämtliche Elemente im felderArray werden auf nicht ausgewählt zurückgesetzt und selectedFelder auf einen leeren Array zurückgesetzt. */
-    const deleteMarks = () => {
-        setFelderArray(
-            felderArray.map(feld => {
+    const deleteMarkierungen = () => {
+        setFelder(
+            felder.map(feld => {
                 return feld.selected === true ? {...feld, selected: false} : feld;
             })
         )
@@ -63,7 +63,7 @@ const ContextProvider = (props) => {
     }
    
     return (
-        <Context.Provider value={{ felderArray, setFelderArray, count, setCount, handleClick, deleteMarks, selectedFelder, setSelectedFelder }}>
+        <Context.Provider value={{ felder, setFelder, count, setCount, handleClick, deleteMarkierungen, selectedFelder, setSelectedFelder }}>
             {props.children}
         </Context.Provider>
     )
