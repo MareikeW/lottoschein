@@ -4,21 +4,9 @@ import kreuzchenImage from "../image/mark.png";
 
 const Feld = ({ ziffer }) => {
     const context = useContext(Context);
-    const feldContainer = document.getElementsByClassName("ziffer__container");
     
-    if (feldContainer.length === 49) {
-        if ((context.selectedFelder.length === 6 && !context.felder[ziffer-1].selected) && !feldContainer[ziffer-1].classList.contains("disabledFeld")) {  
-            feldContainer[ziffer-1].classList.add("disabledFeld");
-        } 
-        
-        else if ((context.selectedFelder.length > 0 && context.selectedFelder.length < 6) && feldContainer[ziffer-1].classList.contains("disabledFeld")) {
-            feldContainer[ziffer-1].classList.remove("disabledFeld");
-        }
-    
-        else if (context.selectedFelder.length === 0 && feldContainer[ziffer-1].classList.contains("disabledFeld")) {
-            feldContainer[ziffer-1].classList.remove("disabledFeld");
-        }
-    }
+    const disabledFeld = (context.selectedFelder.length === 6 && !context.felder[ziffer-1].selected) ? 'disabledFeld' : null;
+    const zifferContainerStyling = `ziffer__container ${disabledFeld}`
 
     const handleFeldClick = ziffer => {
         if (context.count >= 0 && context.count < 6) {
@@ -32,7 +20,7 @@ const Feld = ({ ziffer }) => {
 
     return (
         /* Gibt Ziffer vom geklickten Feld an Context zurück  */
-        <div className="ziffer__container" onClick={() => handleFeldClick(ziffer)}>
+        <div className={zifferContainerStyling} onClick={() => handleFeldClick(ziffer)}>
             <label className="ziffer">{ ziffer }</label>
             { context.felder[ziffer-1].selected 
                 && context.count <= 6 
